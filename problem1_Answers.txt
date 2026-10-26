@@ -1,57 +1,71 @@
-# Lab 3 - Problem 1 Answers
 
-## Q1.1
+Lab 3 - Problem 1 Answers
+
+========================================
+Q1.1
+========================================
 
 First, I added a new department and assigned an existing employee as its manager.
 
 SQL:
 
-```sql
 USE company;
 
 INSERT INTO DEPARTMENT (Dnumber, Dname, mgr_ssn, mgr_start_date)
 VALUES (4, 'Quality Assurance', '100000001', '2026-10-20');
-```
 
 Output: 1 row affected.
 
 Then I tried to delete this employee:
 
-```sql
 DELETE FROM EMPLOYEE
 WHERE ssn = '100000001';
-```
 
-Result: MySQL did not allow the deletion because this employee is a manager of a department. This causes a foreign key error (normally Error 1451).
+Output (MySQL Workbench):
 
-Answer: We cannot delete an employee if another table still references that employee. The foreign key protects the relationship between the tables.
+Error Code: 1451.
+Cannot delete or update a parent row: a foreign key constraint fails.
 
-## Q1.2
+Answer:
+MySQL did not allow the deletion because this employee is a manager of a department.
+We cannot delete an employee if another table still references that employee.
+The foreign key protects the relationship between the tables.
+
+========================================
+
+Q1.2
+========================================
 
 I tried to add a project with department number 999, but this department does not exist.
 
 SQL:
 
-```sql
 INSERT INTO PROJECT (Pnumber, Pname, Plocation, Dno)
 VALUES (104, 'Test Project', 'Cairo', 999);
-```
 
-Output: Error Code 1452.
+Output (MySQL Workbench):
 
-Answer: MySQL rejected the INSERT because `Dno` is a foreign key. Every project must belong to a department that already exists in the DEPARTMENT table.
+Error Code: 1452.
+Cannot add or update a child row: a foreign key constraint fails.
 
-## Q1.3
+Answer:
+MySQL rejected the INSERT because Dno is a foreign key.
+Every project must belong to a department that already exists in the DEPARTMENT table.
 
-If `mgr_ssn` and `Dno` are both NOT NULL, we cannot insert the first employee or department while both foreign keys are active.
+
+========================================
+Q1.3
+========================================
+
+If mgr_ssn and Dno are both NOT NULL, we cannot insert the first employee or department while both foreign keys are active.
 
 This happens because each table depends on the other one.
 
-My solution is to create the tables first without the circular foreign key constraints. Then I can insert the department and employee records and add the foreign keys afterward using ALTER TABLE.
+My solution is to create the tables first without the circular foreign key constraints.
+Then I can insert the department and employee records and add the foreign keys afterward using ALTER TABLE.
 
 Example:
 
-```sql
 ALTER TABLE EMPLOYEE
 ADD FOREIGN KEY (Dno)
 REFERENCES DEPARTMENT(Dnumber);
@@ -59,8 +73,8 @@ REFERENCES DEPARTMENT(Dnumber);
 ALTER TABLE DEPARTMENT
 ADD FOREIGN KEY (mgr_ssn)
 REFERENCES EMPLOYEE(ssn);
-```
 
 These commands would be used after inserting the related records.
 
-This is my explanation for Q1.3. I did not run this example on the current database.
+This is my explanation for Q1.3.
+I did not run this example on the current database.
