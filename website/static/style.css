@@ -1,0 +1,34 @@
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#17223b;background:#f3f6fb}*{box-sizing:border-box}body{margin:0}.container{max-width:830px;margin:0 auto;padding:38px 18px 70px}.brand{display:flex;align-items:center;gap:11px;font-size:23px;font-weight:800;margin-bottom:26px}.brand small{display:block;font-size:12px;font-weight:500;color:#69748b}.brand-icon{display:grid;place-items:center;background:#3564df;color:white;width:44px;height:44px;border-radius:13px}.panel{background:white;border:1px solid #e2e8f3;border-radius:19px;padding:30px;box-shadow:0 15px 40px #1d3b7410}.auth{max-width:480px;margin:auto}.panel h1{margin:0;font-size:29px}.panel h2{font-size:16px;margin:28px 0 12px}.muted{color:#66738a;margin:8px 0 24px}.auth label{display:block;font-size:14px;font-weight:600;margin:16px 0}input:not([type=hidden]){display:block;width:100%;min-width:0;margin-top:7px;border:1px solid #ccd5e6;border-radius:10px;padding:13px 12px;font:inherit;color:#162139}input:focus{outline:2px solid #9cb9ff;outline-offset:1px}button{cursor:pointer;font:inherit;border:0;border-radius:9px;padding:12px 17px;font-weight:650;white-space:nowrap}button.primary{background:#3564df;color:white}button.primary:hover{background:#244fc8}button.secondary{background:#eef1f7;color:#34425c}button.danger{background:#ffedf0;color:#b72c48}button.tiny{padding:9px 12px;font-size:13px}button.full{width:100%;margin-top:10px}.footer-text{text-align:center;color:#66738a;font-size:14px;margin:22px 0 0}a{color:#2459d9;font-weight:650;text-decoration:none}.notice{padding:12px 14px;border-radius:10px;margin:12px 0;font-size:14px}.notice.error{background:#fff0f0;color:#9d2534}.notice.success{background:#e9faf1;color:#137549}.hidden{display:none!important}.page-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}.page-top .muted{margin-bottom:12px}.add-form{display:flex;gap:10px}.add-form input{margin:0}.list-heading{display:flex;justify-content:space-between;align-items:center}.pill{font-size:12px;background:#edf2ff;color:#315bbf;border-radius:30px;padding:6px 10px}.task-list{list-style:none;padding:0;margin:0}.task{border-top:1px solid #edf0f6;padding:13px 0}.task-line{display:flex;align-items:center;gap:10px}.task-title{flex:1;min-width:0;overflow-wrap:anywhere}.completed .task-title{text-decoration:line-through;color:#8992a5}.check{color:#315fc9;background:#edf2ff;font-size:22px;padding:7px 12px}.completed .check{background:#e2f6e9;color:#16803f}.toggle-form,.delete-form{margin:0}.edit-form{display:flex;gap:9px;margin:11px 0 0 45px}.edit-form input{margin:0}.empty{text-align:center;background:#f7f9fd;color:#778198;padding:32px 12px;border-radius:12px}@media(max-width:450px){.container{padding:20px 12px}.panel{padding:18px;border-radius:14px}.panel h1{font-size:24px}.task-line{gap:6px}.task-line .tiny{padding:8px}.brand{margin-bottom:18px}.page-top{align-items:center}}
+
+/* Lab 3 — Library UI */
+.main-nav{display:flex;gap:10px;align-items:center;margin:-12px 0 24px;flex-wrap:wrap}
+.main-nav a{display:inline-flex;padding:9px 13px;border-radius:10px;background:#eaf0ff}
+.main-nav form{margin-left:auto}
+.library-panel{max-width:1100px}
+.library-stats{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0 22px}
+.library-stats span{background:#eef3ff;padding:9px 13px;color:#315abb;border-radius:9px;font-size:13px;font-weight:650}
+.library-section{margin-top:30px;padding-top:10px;border-top:1px solid #e2e8f3}
+.library-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:end}
+.library-form label,.mini-form label{display:block;font-weight:600;font-size:13px;color:#34425c;min-width:0}
+.library-form button{justify-self:start}
+.library-form input:not([type=hidden]),.library-form select,.mini-form input:not([type=hidden]),.mini-form select{display:block;width:100%;min-width:0;border:1px solid #ccd5e6;border-radius:9px;padding:10px;margin-top:5px;background:white;font:inherit;color:#17223b}
+.library-form input[type=file],.mini-form input[type=file]{font-size:12px}
+.table-scroll{overflow-x:auto;border:1px solid #e3e9f4;border-radius:10px}
+.data-table{width:100%;border-collapse:collapse;text-align:left;font-size:13px}
+.data-table thead{background:#f4f7fd}
+.data-table th,.data-table td{padding:12px 11px;border-bottom:1px solid #e8edf6;vertical-align:middle}
+.data-table tr:last-child td{border-bottom:0}
+.data-table th{color:#4c5b76;font-weight:750;white-space:nowrap}
+.data-table td.actions{min-width:210px}
+.portrait,.book-cover{display:grid;place-items:center;object-fit:cover;background:#eaf0fb;border-radius:9px}
+.portrait{width:60px;height:60px}
+.book-cover{width:55px;height:76px}
+.placeholder{font-size:25px}
+.actions details{display:inline-block;vertical-align:top;position:relative}
+.actions summary{display:inline-block;list-style:none;cursor:pointer;color:#315bbf;background:#eef3ff;border-radius:8px;padding:9px 12px;font-weight:700}
+.actions details[open]{display:block}
+.actions summary::-webkit-details-marker{display:none}
+.mini-form{display:grid;gap:10px;background:#f7f9fd;border:1px solid #e3e9f4;border-radius:8px;padding:12px;min-width:230px;margin-top:9px}
+.actions .confirm-delete{display:inline-block;margin-left:6px}
+.footnote{font-size:12px}
+@media(max-width:600px){.library-form{grid-template-columns:1fr}.container{padding:18px 10px}.panel{padding:17px}.main-nav form{margin-left:0}.data-table th,.data-table td{padding:9px 7px}}

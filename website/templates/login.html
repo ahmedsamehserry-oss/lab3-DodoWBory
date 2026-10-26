@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Log in{% endblock %}
+{% block content %}
+<section class="panel auth">
+  <h1>Welcome back</h1><p class="muted">Log in to view your personal tasks.</p>
+  {% if errors %}<div class="notice error" role="alert">{% for error in errors %}<div>{{ error }}</div>{% endfor %}</div>{% endif %}
+  <div id="client-errors" class="notice error hidden" role="alert"></div>
+  <form method="post" action="{{ url_for('login') }}" novalidate data-check="login">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+    <label>Email <input name="email" type="email" autocomplete="email" value="{{ email }}"></label>
+    <label>Password <input name="password" type="password" autocomplete="current-password"></label>
+    <button type="submit" class="primary full">Log in</button>
+  </form>
+  <p class="footer-text">New here? <a href="{{ url_for('register') }}">Create account</a></p>
+</section>
+{% endblock %}

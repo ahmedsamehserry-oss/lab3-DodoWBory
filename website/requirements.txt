@@ -1,0 +1,5 @@
+Flask>=3.0,<4
+PyMySQL>=1.1,<2
+bcrypt>=4.0,<6
+python-dotenv>=1.0,<2
+Pillow>=10.0,<13
